@@ -1,0 +1,99 @@
+body {
+    background-image: url(kepek/hatter.jpg);
+    background-repeat: space;
+}
+main, header, nav, footer, article, aside {
+    border: 1px solid black;
+    padding: 10px;
+    max-width:900px;
+}
+main {
+    display: grid;
+    grid-template-areas: "h h h h h h"
+                        "n a a a a as"
+                        "f f f f f f";
+    /*grid-template-columns: repeat(3, 175px) auto;*/
+    margin: auto;
+    background-color:white;
+
+}
+header{
+    grid-area: h;
+    text-align: center;
+    background-image: url(kepek/fejlec.jpg);
+}
+header h1{
+    color: white;
+}
+footer{
+    grid-area: f;
+    background-color: #00A9F2;
+    text-align: center;
+}
+article{
+    grid-area: a;
+    text-align: justify;
+}
+nav{
+    grid-area: n;
+
+}
+aside {
+    grid-area: as;
+    text-align: justify;
+    text-align: center;
+}
+aside h1{
+    text-align: left;
+    text-justify: auto;
+}
+aside p{
+    text-justify: auto;
+}
+
+nav ul li  {
+    list-style: none;
+    padding-left: 0;
+    color: white;
+    background-color: #008ADA;
+    border: 2px solid #008ADA;
+    border-radius: 8px;
+    padding: 5px;
+    width: 100px;
+}
+nav ul li a {
+    text-decoration: none;
+    display: block;
+    color: white;
+    padding-left: 20px;
+}
+nav ul {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+nav li:hover {
+    color: #008ADA ;
+    background-color: white;
+    background-image: url(kepek/ikon.png);
+    background-repeat: no-repeat;
+}
+nav li a:hover{
+    color:#008ADA
+}
+
+/* Reszponzív */
+@media screen and (max-width: 600px) {
+    main {
+        grid-template-rows: auto auto auto auto;
+        grid-auto-columns: auto;
+        grid-template-areas: "h h h "
+                            "n n n"
+                            "a a a"
+                            "as as as"
+                            "s s s"
+                            "f f f";
+    }
+    nav ul{
+        grid-template-columns: 1fr;
+    }
+}
